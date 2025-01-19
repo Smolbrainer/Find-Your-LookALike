@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Celebrity Look Alike!</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div id="loading">
+        <div class="cube"></div>
+        <p>Loading...</p>
+    </div>
+    <div id="content">
+        <div class="container">
+            <h2>Upload a Picture of Yourself</h2>
+            <form method="POST" enctype="multipart/form-data">
+                <div class="file-input">
+                    <input type="file" name="file" accept="image/*">
+                    <button type="submit">Upload</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+    var loadingScreen = document.getElementById('loading');
+    var content = document.getElementById('content');
+    
+    setTimeout(function() {
+        loadingScreen.style.display = 'none'; 
+        content.style.display = 'block'; 
+    }, 1000); 
+});
+    </script>
+</body>
+</html>

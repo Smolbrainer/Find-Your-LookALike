@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Celebrity Look-Alike!</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div id="loading">
+        <div class="cube"></div>
+        <p>Loading...</p>
+    </div>
+    
+    <div id="content">
+        <div class="container">
+            <h2>Upload a Picture of Yourself</h2>
+            <form action="/" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" required>
+                <button type="submit">Upload</button>
+            </form>
+        </div>
+
+        <div id="result">
+            {% if mostSim %}
+                <h3>Most Similar Match</h3>
+                <p>Similarity Score: {{ max|round(4) }}</p>
+                <img src="static/image.jpg" alt="Most Similar Face" width="300px">
+            {% else %}
+                <p>{{ error if error else "No matching face found." }}</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            var loadingScreen = document.getElementById('loading');
+            var content = document.getElementById('content');
+            
+            setTimeout(function() {
+                loadingScreen.style.display = 'none'; 
+                content.style.display = 'block'; 
+            }, 1000); 
+        });
+    </script>
+</body>
+</html>

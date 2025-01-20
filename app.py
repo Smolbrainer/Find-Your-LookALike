@@ -42,15 +42,18 @@ def loadImg():
     db.execute("SELECT image_path, encoding FROM encodings")
     stored_encodings = db.fetchall() 
 
+    #Loops through every tuple in stored_encodings and compares it with the encoding of the uploaded file using cosine similarity
     max = -1
     for image_path, encoding_blob in stored_encodings:
         stored_encoding = np.frombuffer(encoding_blob, dtype=np.float64)
-        distance = np.dot(stored_encoding, encoding1) / (np.linalg.norm(stored_encoding) * np.linalg.norm(encoding1))  # Lower is more similar
+        distance = np.dot(stored_encoding, encoding1) / (np.linalg.norm(stored_encoding) * np.linalg.norm(encoding1))  
         if max<distance: 
             max = distance
             mostImg = image_path
 
     con.close()
+
+    #Copies the file to a folder called static
     copyfile(mostImg, "./static/image.jpg")
 
     return flask.render_template('redirection.html', max=max, mostSim=mostImg)

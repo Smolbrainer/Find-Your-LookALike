@@ -1,0 +1,7 @@
+flask
+face-recognition
+numpy
+opencv-python
+dlib
+cmake
+gunicorn

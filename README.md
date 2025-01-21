@@ -21,9 +21,10 @@ The following libraries are utilized in this project:
   - Handles HTTP requests and responses between the client and server.
   - Renders HTML templates to display results to the user.
 
-- **Pillow (PIL)**:
-  - Processes user-uploaded images, including opening and converting images to the required format for analysis.
-  - Performs any necessary image transformations or preprocessing steps.
+- **OpenCV**:
+  - Handles image processing tasks such as reading user-uploaded images and converting them to the required format for analysis.
+  - Performs image transformations and preprocessing, such as resizing and grayscale conversion, to ensure consistency and accuracy in facial recognition.
+  - Aids in detecting and cropping faces in the images before passing them to the facial recognition module.
 
 - **face_recognition**:
   - Detects faces within the uploaded images.
@@ -31,7 +32,7 @@ The following libraries are utilized in this project:
   - Compares the user's facial embeddings with the stored celebrity embeddings to find the closest match.
 
 - **SQLite3**:
-  - Stores precomputed facial embeddings of celebrity images along with their metadata (e.g., name, image path).
+  - Stores precomputed facial embeddings of celebrity images along with their metadata (e.g., encoding in bytes, image path).
   - Allows efficient querying to retrieve the most similar celebrity based on the user's facial embedding.
 
 ## Setup Instructions

@@ -10,7 +10,7 @@ https://github.com/user-attachments/assets/f4ee7823-b964-4f46-85d6-d0a93da7ba53
 The following libraries are utilized in this project:
 
 - **Flask**: A micro web framework used to create the web application, handle routing, and manage user interactions.
-- **Pillow (PIL)**: A Python Imaging Library used for opening, manipulating, and saving images in various formats.
+- **OpenCV**: A powerful computer vision library used for image processing tasks such as reading, manipulating, and saving images in various formats. It also handles tasks like face detection, image resizing, and grayscale conversion.
 - **face_recognition**: A library built using dlib's state-of-the-art face recognition built with deep learning. It provides easy-to-use functions for detecting faces and computing facial embeddings.
 - **SQLite3**: A lightweight disk-based database used to store facial encodings of celebrity images for quick retrieval and comparison.
 
